@@ -30,9 +30,6 @@
         <label for="text">Create an image from text</label>
         <input type="text" id="text" />
 
-        <!-- <label for="token">Enter API Token:</label>
-        <input type="text" id="token" /> -->
-
         <label for="token"
           >Enter API Token:
           <span class="hint-icon" id="hint-icon"
@@ -48,11 +45,8 @@
         </div>
 
         <div class="hint-content" id="hint-content">
-          <h5
-            style="font-weight: 500; color: blue; border-bottom: 1px solid gray"
-          >
-            Get your API token from Hugging Face:
-          </h5>
+          <h5>Get your API token from Hugging Face:</h5>
+          <br />
           <ol>
             <li>
               <p>Sign up or log into your Hugging Face account.</p>
@@ -91,17 +85,25 @@
             <p id="model-info-text"></p>
           </div>
         </div>
-        <!-- Info display -->
 
-        <button onclick="showHistory()">histry</button>
+        <!-- test only -->
+        <!-- <button onclick="showHistory()">histry</button>
         <button
           onclick="addToHistory('https://tse3.explicit.bing.net/th?id=OIP.iC2nXJ8sgDXaO8xp3X3izAHaE6&pid=Api&P=0&h=180')"
         >
           add to history
-        </button>
-
-        <button id="btn" class="primary-btn">Generate</button>
-        <button id="downloadBtn" class="hidden">Download Image</button>
+        </button> -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+          "
+        >
+          <button id="btn" class="primary-btn">Generate</button>
+          <button id="downloadBtn" class="hidden">Download Image</button>
+        </div>
       </div>
 
       <div class="result-container">

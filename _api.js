@@ -21,7 +21,10 @@ async function query(chooseModel, token = TOKEN) {
     const result = await response.blob();
     return result;
   } catch (error) {
-    console.error("Error fetching the image:", error);
+    notificationInstance.show(
+      "error",
+      "Error fetching the image. Please try again later."
+    );
     throw error; // Re-throw the error to handle it in the click event listener
   }
 }

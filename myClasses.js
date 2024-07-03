@@ -101,8 +101,6 @@ class ImageHistory {
       downloadButton.classList.add("downloadButton");
       downloadButton.addEventListener("click", (e) => {
         e.preventDefault();
-
-        console.log("urlbef", index);
         this.downloadThisImage(index);
       });
       historyItem.appendChild(downloadButton);
@@ -125,7 +123,6 @@ class ImageHistory {
   downloadThisImage(index) {
     const imageUrl = this.history[index];
     if (imageUrl) {
-      console.log("url", imageUrl);
       //   // Create a temporary <a> element to trigger download
       const link = document.createElement("a");
       link.href = imageUrl;

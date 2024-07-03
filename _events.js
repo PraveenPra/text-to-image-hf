@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // hintIcon.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  //   console.log("clicked", hintContent.classList);
-  //   hintContent.classList.toggle("show");
-  // });
   // Instantiate Hint for API token
   const apiTokenHint = new Hint("hint-icon", "hint-content");
 
@@ -43,8 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const objectUrl = URL.createObjectURL(response);
       img.src = objectUrl;
       downloadBtn.classList.remove("hidden");
-
-      addToHistory(objectUrl);
+      imageHistoryInstance.addToHistory(objectUrl);
     } catch (error) {
       notificationInstance.show(
         "error",

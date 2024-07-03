@@ -4,7 +4,8 @@
   --secondary-color: #5603ad;
   --secondary-hovered: #3d0066; /* Green for secondary elements  */
   --accent-color: #8367c7; /* Red for accents and alerts */
-
+  --success-color: #6acc1a;
+  --info--color: #72cdf4;
   --danger-color: #e71d36;
   --background-color: #ffffff; /* Light gray for background */
   --text-color: #14213d; /* Dark gray for text */
@@ -44,9 +45,7 @@
 
 body {
   /* font-family: Arial, sans-serif; */
-  /* font-family: "Syne Mono", monospace; */
-  /* font-family: "Josefin Sans", sans-serif;
-   */
+
   font-family: "Grandstander", cursive;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -58,7 +57,6 @@ body {
 
 .container {
   display: flex;
-  /* flex-direction: column; */
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -74,7 +72,6 @@ body {
 }
 
 .form-container {
-  /* border-right: 1px solid gainsboro; */
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="100%" viewBox="0 0 10 10"><path fill="none" stroke="gainsboro" stroke-width="1" d="M0 0l5 5 -5 5"/></svg>'); /* Snake-like border image */
   background-repeat: repeat-y; /* Repeat vertically */
   background-position: right center; /* Position on the right side */
@@ -135,7 +132,6 @@ select {
 
 button {
   padding: 10px 20px;
-  /* background-color: var(--secondary-color); */
   color: white;
   border: none;
   border-radius: 5px;
@@ -143,7 +139,6 @@ button {
   font-size: 1em;
   transition: background-color 0.3s ease;
   margin-top: 10px;
-  /* font-family: "Syne Mono", monospace; */
   font-family: "Grandstander", cursive;
   margin-bottom: 10px;
 }
@@ -185,16 +180,12 @@ button {
 
 .history-item {
   margin: 10px;
-  /* border: 2px solid red; */
-  /* border-radius: 5px; */
-  /* overflow: hidden; */
   position: relative;
 }
 
 .history-item img {
   max-width: 150px;
   height: auto;
-  /* z-index: 0; */
   object-fit: cover;
   opacity: 0.8;
   border-radius: 10%;
@@ -210,7 +201,6 @@ button {
   padding: 2px 4px;
   color: var(--background-color);
   background-color: var(--danger-color);
-  /* border: 2px solid var(--background-color); */
   text-align: center;
   cursor: pointer;
 }
@@ -225,31 +215,11 @@ button {
   background-color: var(--primary-color);
   color: var(--background-color);
   text-align: center;
-  /* z-index: 10; */
 }
-/* eye toggle */
-/* .input-with-icon {
-  position: relative;
-} */
 
 .input-with-icon input {
-  /* padding-right: 30px; Space for the icon */
-
-  /* padding: 10px;
-  margin-bottom: 20px; */
   width: 280px;
-  /* border: 2px solid #ddd;
-  border-radius: 5px;
-  font-size: 1em; */
 }
-/* 
-.input-with-icon .toggle-password {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  cursor: pointer;
-} */
 
 .fa-eye-slash:before {
   content: "\f070"; /* Unicode for the eye slash icon */
@@ -264,16 +234,15 @@ button {
 
 .hint-content {
   display: none;
-  background-color: #bce9f8;
-  border: 1px solid #ddd;
+  background-color: #e2eafc;
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
+  border-radius: 10px;
 }
 
 .hint-content p {
   font-size: 14px;
-  /* line-height: 4px; */
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -301,15 +270,15 @@ button {
 }
 
 .notification.success {
-  background-color: #5cb85c;
+  background-color: var(--success-color);
 }
 
 .notification.error {
-  background-color: #d9534f;
+  background-color: var(--danger-color);
 }
 
 .notification.info {
-  background-color: #5bc0de;
+  background-color: var(--info--color);
 }
 
 .close-btn {
