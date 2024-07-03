@@ -100,7 +100,7 @@
           add to history
         </button>
 
-        <button id="btn">Generate</button>
+        <button id="btn" class="primary-btn">Generate</button>
         <button id="downloadBtn" class="hidden">Download Image</button>
       </div>
 
@@ -113,14 +113,14 @@
             <h3>History<span class="snakex">.</span></h3>
 
             <button
-              class="saveHistory"
+              class="saveHistory primary-btn"
               onclick="imageHistoryInstance.saveToLocalStorage()"
             >
               Save History
             </button>
 
             <button
-              class="clearHistory"
+              class="clearHistory secondary-btn"
               onclick="imageHistoryInstance.clearHistory()"
             >
               Clear History
