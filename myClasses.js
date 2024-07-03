@@ -58,3 +58,93 @@ const notificationInstance = new Notification();
 // notificationInstance.show("success", "Operation successful!");
 // notificationInstance.show("error", "An error occurred. Please try again.");
 // notificationInstance.show("info", "Informational message.");
+
+// ImageHistory class
+class ImageHistory {
+  constructor(historyContainerId) {
+    this.history = []; // Array to store image URLs
+    this.historyContainer = document.querySelector(`#${historyContainerId}`);
+  }
+
+  addToHistory(imageUrl) {
+    this.history.push(imageUrl);
+    this.renderHistory(); // Update the DOM to reflect changes
+  }
+
+  renderHistory() {
+    // Clear existing history items in the DOM
+    this.historyContainer.innerHTML = "";
+
+    // Render each image in history
+    this.history.forEach((imageUrl, index) => {
+      const historyItem = document.createElement("div");
+      historyItem.classList.add("history-item");
+
+      const image = document.createElement("img");
+      image.src = imageUrl;
+
+      historyItem.appendChild(image);
+
+      // Add download button
+      const downloadButton = document.createElement("span");
+      const iconDownload = document.createElement("i");
+      iconDownload.classList.add("fas", "fa-arrow-down");
+      downloadButton.appendChild(iconDownload);
+      //   downloadButton.textContent = "Download";
+      downloadButton.classList.add("downloadButton");
+      downloadButton.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        console.log("urlbef", index);
+        this.downloadThisImage(index);
+      });
+      historyItem.appendChild(downloadButton);
+
+      // Add remove button
+      const removeBtn = document.createElement("span");
+      const iconRemove = document.createElement("i");
+      iconRemove.classList.add("fas", "fa-xmark");
+      removeBtn.appendChild(iconRemove);
+      //   removeBtn.textContent = "Remove";
+      removeBtn.classList.add("removeButton");
+
+      removeBtn.addEventListener("click", (e) => this.removeFromHistory(index));
+      historyItem.appendChild(removeBtn);
+
+      this.historyContainer.appendChild(historyItem);
+    });
+  }
+
+  downloadThisImage(index) {
+    const imageUrl = this.history[index];
+    if (imageUrl) {
+      console.log("url", imageUrl);
+      //   // Create a temporary <a> element to trigger download
+      const link = document.createElement("a");
+      link.href = imageUrl;
+      link.download = `image_${index + 1}.png`; // Adjust filename as needed
+      link.click();
+      link.remove();
+    } else {
+      //   // Handle error or show notification if image URL not found
+      notificationInstance.show("error", "Image URL not found.");
+    }
+  }
+
+  removeFromHistory(index) {
+    if (index >= 0 && index < this.history.length) {
+      this.history.splice(index, 1);
+      this.renderHistory(); // Update the DOM after removal
+      notificationInstance.show("success", "Image removed from history.");
+    } else {
+      // Handle error or show notification if index is out of range
+      notificationInstance.show("error", "Invalid index.");
+    }
+  }
+}
+
+// Singleton instance of ImageHistory
+const imageHistoryInstance = new ImageHistory("history-container"); // Provide ID of history container element
+
+// Example usage:
+// imageHistoryInstance.addToHistory("https://example.com/image1.png");

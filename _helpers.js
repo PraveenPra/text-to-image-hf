@@ -5,12 +5,19 @@ function updateModelInfo() {
 }
 
 function addToHistory(imageUrl) {
-  const historyItem = document.createElement("div");
-  historyItem.classList.add("history-item");
+  // const historyItem = document.createElement("div");
+  // historyItem.classList.add("history-item");
 
-  const image = document.createElement("img");
-  image.src = imageUrl;
+  // const image = document.createElement("img");
+  // image.src = imageUrl;
 
-  historyItem.appendChild(image);
-  historyContainer.appendChild(historyItem);
+  // historyItem.appendChild(image);
+  // historyContainer.appendChild(historyItem);
+  // console.log(imageUrl, "url");
+  imageHistoryInstance.addToHistory(imageUrl);
 }
+
+// function showHistory() {
+//   console.log(imageHistoryInstance.history, "history");
+//   historyContainer.classList.remove("hidden");
+// }
