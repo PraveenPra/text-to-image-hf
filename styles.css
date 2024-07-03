@@ -83,6 +83,25 @@ button:hover {
   border-radius: 5px;
 }
 
+#history {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.history-item {
+  margin: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.history-item img {
+  max-width: 150px;
+  height: auto;
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 500px) {
   input[type="text"] {
