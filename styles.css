@@ -119,6 +119,7 @@ button {
   transition: background-color 0.3s ease;
   margin-top: 10px;
   font-family: "Syne Mono", monospace;
+  margin-bottom: 10px;
 }
 
 button:hover {
