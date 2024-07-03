@@ -1,5 +1,22 @@
 chooseModel.addEventListener("change", updateModelInfo);
 
+togglePassword.addEventListener("click", () => {
+  console.log(token.getAttribute("type"));
+  const type = token.getAttribute("type") === "password" ? "text" : "password";
+  token.setAttribute("type", type);
+
+  // Toggle icon
+  // if (type === "password") {
+  //   togglePassword.querySelector("i").classList.remove("fa-eye-slash");
+  //   togglePassword.querySelector("i").classList.add("fa-eye");
+  // } else {
+  //   togglePassword.querySelector("i").classList.add("fa-eye-slash");
+  //   togglePassword.querySelector("i").classList.remove("fa-eye");
+  // }
+  togglePassword.querySelector("i").classList.toggle("fa-eye-slash");
+  togglePassword.querySelector("i").classList.toggle("fa-eye");
+});
+
 btn.addEventListener("click", async () => {
   //form validations
   if (text.value.trim() === "") {

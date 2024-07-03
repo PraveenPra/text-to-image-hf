@@ -80,7 +80,7 @@ label {
   color: #555;
 }
 
-input[type="text"] {
+input {
   padding: 10px;
   margin-bottom: 20px;
   width: 300px;
@@ -153,6 +153,34 @@ button:hover {
   height: auto;
 }
 
+/* eye toggle */
+/* .input-with-icon {
+  position: relative;
+} */
+
+.input-with-icon input {
+  /* padding-right: 30px; Space for the icon */
+
+  /* padding: 10px;
+  margin-bottom: 20px; */
+  width: 280px;
+  /* border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em; */
+}
+/* 
+.input-with-icon .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+} */
+
+.fa-eye-slash:before {
+  content: "\f070"; /* Unicode for the eye slash icon */
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .container {
@@ -172,7 +200,7 @@ button:hover {
     padding: 10px;
   }
 
-  input[type="text"] {
+  input {
     width: 90%;
   }
 

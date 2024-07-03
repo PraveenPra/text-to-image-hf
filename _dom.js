@@ -6,6 +6,7 @@ const text = document.querySelector("#text");
 const chooseModel = document.querySelector("#chooseModel");
 const btn = document.querySelector("#btn");
 const downloadBtn = document.querySelector("#downloadBtn");
+const togglePassword = document.querySelector("#toggle-password");
 
 //outputs
 const modelInfo = document.querySelector("#model-info-text"); // Get the model info div
