@@ -181,6 +181,34 @@ button:hover {
   content: "\f070"; /* Unicode for the eye slash icon */
 }
 
+/* ===============hint============== */
+.hint-icon {
+  display: inline;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.hint-content {
+  display: none;
+  background-color: #bce9f8;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.hint-content p {
+  font-size: 14px;
+}
+
+.hint-content ol {
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.show {
+  display: block;
+}
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .container {

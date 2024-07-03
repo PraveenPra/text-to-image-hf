@@ -2,6 +2,10 @@
 const token = document.querySelector("#token");
 const text = document.querySelector("#text");
 
+//others
+const hintIcon = document.querySelector("#hint-icon");
+const hintContent = document.querySelector("#hint-content");
+
 //call to actions
 const chooseModel = document.querySelector("#chooseModel");
 const btn = document.querySelector("#btn");

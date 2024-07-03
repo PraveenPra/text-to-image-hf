@@ -33,12 +33,32 @@
         <!-- <label for="token">Enter API Token:</label>
         <input type="text" id="token" /> -->
 
-        <label for="token">Enter API Token:</label>
+        <label for="token"
+          >Enter API Token:
+          <span class="hint-icon" id="hint-icon"
+            ><i class="fas fa-question-circle"></i
+          ></span>
+        </label>
+
         <div class="input-with-icon">
           <input type="password" id="token" />
           <span class="toggle-password" id="toggle-password">
             <i class="fa fa-eye-slash" aria-hidden="true"></i>
           </span>
+        </div>
+
+        <div class="hint-content" id="hint-content">
+          <p
+            style="font-weight: 500; color: blue; border-bottom: 1px solid gray"
+          >
+            Get your API token from Hugging Face:
+          </p>
+          <ol>
+            <li>Sign up or log into your Hugging Face account.</li>
+            <li>Go to your account settings or dashboard.</li>
+            <li>Find the API tokens section and generate a new token.</li>
+            <li>Copy the token and paste it into the input field above.</li>
+          </ol>
         </div>
 
         <label for="chooseModel">Select a Model:</label>
