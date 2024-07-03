@@ -1,8 +1,14 @@
 chooseModel.addEventListener("change", updateModelInfo);
 
 btn.addEventListener("click", async () => {
+  //form validations
   if (text.value.trim() === "") {
     alert("Please enter some text.");
+    return;
+  }
+
+  if (token.value.trim() === "") {
+    alert("Please enter your API token.");
     return;
   }
 
@@ -11,7 +17,7 @@ btn.addEventListener("click", async () => {
   downloadBtn.classList.add("hidden");
 
   try {
-    const response = await query(chooseModel.value);
+    const response = await query(chooseModel.value, token.value);
     const objectUrl = URL.createObjectURL(response);
     img.src = objectUrl;
     downloadBtn.classList.remove("hidden");

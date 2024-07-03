@@ -1,6 +1,6 @@
-const token = "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"; // Replace with your actual token
+const TOKEN = ""; // Replace with your actual token
 
-async function query(chooseModel) {
+async function query(chooseModel, token = TOKEN) {
   try {
     const response = await fetch(
       `https://api-inference.huggingface.co/models/${chooseModel}`,

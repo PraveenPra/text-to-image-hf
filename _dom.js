@@ -1,11 +1,17 @@
-const img = document.querySelector("#img");
+//inputs
+const token = document.querySelector("#token");
+const text = document.querySelector("#text");
+
+//call to actions
+const chooseModel = document.querySelector("#chooseModel");
 const btn = document.querySelector("#btn");
 const downloadBtn = document.querySelector("#downloadBtn");
-const text = document.querySelector("#text");
-const loader = document.querySelector("#loader");
-const historyContainer = document.querySelector("#history");
-const chooseModel = document.querySelector("#chooseModel");
+
+//outputs
 const modelInfo = document.querySelector("#model-info-text"); // Get the model info div
+const loader = document.querySelector("#loader");
+const img = document.querySelector("#img");
+const historyContainer = document.querySelector("#history");
 
 // ===============data=============
 const modelDetails = {
