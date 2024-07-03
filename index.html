@@ -93,20 +93,42 @@
         </div>
         <!-- Info display -->
 
-        <button id="h" onclick="showHistory()">histry</button>
+        <button onclick="showHistory()">histry</button>
         <button
           onclick="addToHistory('https://tse3.explicit.bing.net/th?id=OIP.iC2nXJ8sgDXaO8xp3X3izAHaE6&pid=Api&P=0&h=180')"
         >
           add to history
         </button>
+
         <button id="btn">Generate</button>
         <button id="downloadBtn" class="hidden">Download Image</button>
       </div>
+
       <div class="result-container">
         <div id="loader" class="hidden"></div>
         <img src="" alt="" id="img" />
 
-        <div id="history-container"></div>
+        <div id="history">
+          <div id="history-header">
+            <h3>History<span class="snakex">.</span></h3>
+
+            <button
+              class="saveHistory"
+              onclick="imageHistoryInstance.saveToLocalStorage()"
+            >
+              Save History
+            </button>
+
+            <button
+              class="clearHistory"
+              onclick="imageHistoryInstance.clearHistory()"
+            >
+              Clear History
+            </button>
+          </div>
+
+          <div id="history-container"></div>
+        </div>
       </div>
     </div>
     <script src="_api.js"></script>

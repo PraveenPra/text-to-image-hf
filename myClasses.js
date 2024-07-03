@@ -75,6 +75,13 @@ class ImageHistory {
     // Clear existing history items in the DOM
     this.historyContainer.innerHTML = "";
 
+    if (this.history.length === 0) {
+      const historyItem = document.createElement("p");
+      historyItem.textContent = "No images generated yet.";
+      this.historyContainer.appendChild(historyItem);
+      return;
+    }
+
     // Render each image in history
     this.history.forEach((imageUrl, index) => {
       const historyItem = document.createElement("div");
@@ -141,6 +148,30 @@ class ImageHistory {
       notificationInstance.show("error", "Invalid index.");
     }
   }
+
+  clearHistory() {
+    this.history = [];
+    this.saveToLocalStorage();
+    this.renderHistory();
+    notificationInstance.show("success", "History cleared.");
+  }
+
+  saveToLocalStorage() {
+    localStorage.setItem("TextToImgHistory", JSON.stringify(this.history));
+    notificationInstance.show("success", "History saved.");
+  }
+
+  loadImageHistory() {
+    const savedHistory = localStorage.getItem("TextToImgHistory");
+    if (savedHistory) {
+      this.history = JSON.parse(savedHistory);
+      this.renderHistory();
+    }
+  }
+
+  // clearLocalStorage() {
+  //   localStorage.removeItem("TextToImgHistory");
+  // }
 }
 
 // Singleton instance of ImageHistory
