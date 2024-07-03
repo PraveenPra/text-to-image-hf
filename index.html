@@ -21,6 +21,15 @@
         <h1>Text to Image</h1>
         <label for="text">Create an image from text</label>
         <input type="text" id="text" />
+
+        <label for="chooseModel">Select a Model:</label>
+        <select id="chooseModel">
+          <option value="Melonie/text_to_image_finetuned">
+            Melonie/text_to_image_finetuned
+          </option>
+          <option value="mann-e/Mann-E_Dreams">mann-e/Mann-E_Dreams</option>
+        </select>
+
         <button id="btn">Generate</button>
         <button id="downloadBtn" class="hidden">Download Image</button>
       </div>

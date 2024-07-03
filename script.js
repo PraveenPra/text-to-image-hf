@@ -1,9 +1,9 @@
 const token = ""; // Replace with your actual token
 
-async function query(data) {
+async function query(chooseModel) {
   try {
     const response = await fetch(
-      "https://api-inference.huggingface.co/models/Melonie/text_to_image_finetuned",
+      `https://api-inference.huggingface.co/models/${chooseModel}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -32,6 +32,7 @@ const downloadBtn = document.querySelector("#downloadBtn");
 const text = document.querySelector("#text");
 const loader = document.querySelector("#loader");
 const historyContainer = document.querySelector("#history");
+const chooseModel = document.querySelector("#chooseModel");
 
 btn.addEventListener("click", async () => {
   if (text.value.trim() === "") {
@@ -44,7 +45,7 @@ btn.addEventListener("click", async () => {
   downloadBtn.classList.add("hidden");
 
   try {
-    const response = await query(text);
+    const response = await query(chooseModel.value);
     const objectUrl = URL.createObjectURL(response);
     img.src = objectUrl;
     downloadBtn.classList.remove("hidden");
