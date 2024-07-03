@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  hintIcon.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log("clicked", hintContent.classList);
-    hintContent.classList.toggle("show");
-  });
+  // hintIcon.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   console.log("clicked", hintContent.classList);
+  //   hintContent.classList.toggle("show");
+  // });
+  // Instantiate Hint for API token
+  const apiTokenHint = new Hint("hint-icon", "hint-content");
+
+  // Instantiate Hint for Model Info
+  const modelInfoHint = new Hint("model-hint-icon", "model-hint-content");
 
   chooseModel.addEventListener("change", updateModelInfo);
 

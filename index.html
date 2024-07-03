@@ -61,7 +61,12 @@
           </ol>
         </div>
 
-        <label for="chooseModel">Select a Model:</label>
+        <label for="chooseModel"
+          >Select a Model:
+          <span class="hint-icon" id="model-hint-icon"
+            ><i class="fas fa-question-circle"></i
+          ></span>
+        </label>
         <select id="chooseModel">
           <option value="Melonie/text_to_image_finetuned">
             Melonie/text_to_image_finetuned
@@ -72,9 +77,13 @@
             alvdansen/midsommarcartoon
           </option>
         </select>
-        <div id="model-info">
-          <h5>Model info:</h5>
-          <p id="model-info-text"></p>
+
+        <!-- keep same class for same style, only have different id -->
+        <div class="hint-content" id="model-hint-content">
+          <div id="model-info">
+            <h5>Model info:</h5>
+            <p id="model-info-text"></p>
+          </div>
         </div>
         <!-- Info display -->
 
@@ -90,6 +99,7 @@
     </div>
     <script src="_api.js"></script>
     <script src="_dom.js"></script>
+    <script src="myClasses.js"></script>
     <script src="_helpers.js"></script>
     <script src="_events.js"></script>
     <script src="main.js"></script>
