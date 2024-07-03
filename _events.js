@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   chooseModel.addEventListener("change", updateModelInfo);
 
   togglePassword.addEventListener("click", () => {
-    console.log(token.getAttribute("type"));
     const type =
       token.getAttribute("type") === "password" ? "text" : "password";
     token.setAttribute("type", type);
@@ -25,12 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.addEventListener("click", async () => {
     //form validations
     if (text.value.trim() === "") {
-      alert("Please enter some text.");
+      notificationInstance.show("error", "Please enter some text.");
       return;
     }
 
     if (token.value.trim() === "") {
-      alert("Please enter your API token.");
+      notificationInstance.show("error", "Please enter your API token.");
+
       return;
     }
 
@@ -46,8 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       addToHistory(objectUrl);
     } catch (error) {
-      alert(
-        "Sorry, the service is currently unavailable. Please try again later."
+      notificationInstance.show(
+        "error",
+        "Sorry, the model is currently unavailable. Please try again later."
       );
     } finally {
       loader.classList.add("hidden");
