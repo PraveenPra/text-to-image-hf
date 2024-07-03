@@ -5,32 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text to Img</title>
 
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Text to Img</h1>
+    <div class="container">
+      <div class="form-container">
+        <h1>Text to Image</h1>
+        <label for="text">Create an image from text</label>
+        <input type="text" id="text" />
+        <button id="btn">Generate</button>
+        <button id="downloadBtn" class="hidden">Download Image</button>
+      </div>
+      <div class="result-container">
+        <div id="loader" class="hidden"></div>
+        <img src="" alt="" id="img" />
 
-    <label for="text">Create an image from text</label>
-
-    <input type="text" id="text" />
-
-    <button id="btn">Generate</button>
-
-    <button id="downloadBtn" class="hidden">Download Image</button>
-
-    <div id="loader" class="hidden"></div>
-
-    <img src="" alt="" id="img" />
-
-    <div id="history"></div>
-
-    <div class="features">
-      Input Validation: Ensure that users enter text before generating an image.
-      Download Image: Allow users to download the generated image. Loading
-      Indicator: Enhance the loading indicator. Error Handling: Provide
-      user-friendly error messages. History: Store and display a history of
-      generated images. Responsive Design: Ensure the app looks good on
-      different screen sizes.
+        <div id="history"></div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

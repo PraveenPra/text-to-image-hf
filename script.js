@@ -1,4 +1,5 @@
-const token = "";
+const token = ""; // Replace with your actual token
+
 async function query(data) {
   try {
     const response = await fetch(
@@ -14,27 +15,22 @@ async function query(data) {
     );
 
     if (!response.ok) {
-      throw new Error(response.statusText);
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
 
     const result = await response.blob();
     return result;
-  } catch (err) {
+  } catch (error) {
     console.error("Error fetching the image:", error);
     throw error; // Re-throw the error to handle it in the click event listener
   }
 }
 
 const img = document.querySelector("#img");
-
 const btn = document.querySelector("#btn");
-
-const text = document.querySelector("#text");
-
 const downloadBtn = document.querySelector("#downloadBtn");
-
+const text = document.querySelector("#text");
 const loader = document.querySelector("#loader");
-
 const historyContainer = document.querySelector("#history");
 
 btn.addEventListener("click", async () => {
@@ -46,10 +42,9 @@ btn.addEventListener("click", async () => {
   loader.classList.remove("hidden");
   img.src = ""; // Clear the current image
   downloadBtn.classList.add("hidden");
-  historyContainer.innerHTML = "";
 
   try {
-    const response = await query();
+    const response = await query(text);
     const objectUrl = URL.createObjectURL(response);
     img.src = objectUrl;
     downloadBtn.classList.remove("hidden");
@@ -67,19 +62,17 @@ btn.addEventListener("click", async () => {
 downloadBtn.addEventListener("click", () => {
   const link = document.createElement("a");
   link.href = img.src;
-  link.download = "image.png";
+  link.download = "generated_image.png";
   link.click();
 });
 
 function addToHistory(imageUrl) {
   const historyItem = document.createElement("div");
   historyItem.classList.add("history-item");
-  const img = document.createElement("img");
-  img.src = imageUrl;
-  historyItem.appendChild(img);
+
+  const image = document.createElement("img");
+  image.src = imageUrl;
+
+  historyItem.appendChild(image);
   historyContainer.appendChild(historyItem);
 }
-//example
-// query({ inputs: "Astronaut riding a horse" }).then((response) => {
-//   // Use image
-// });
