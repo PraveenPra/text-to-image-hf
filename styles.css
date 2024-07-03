@@ -235,6 +235,8 @@ button:hover {
 
 .hint-content p {
   font-size: 14px;
+  /* line-height: 4px; */
+  font-family: "Courier New", Courier, monospace;
 }
 
 .hint-content ol {
